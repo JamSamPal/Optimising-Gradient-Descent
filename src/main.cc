@@ -3,8 +3,10 @@
 #include <iostream>
 
 int main() {
-    float learningRate = 0.1;
-    Gd Gd(learningRate);
+    float learningRate = 0.005;
+    float gradient = 0.5;
+    float intercept = 0.0;
+    Gd Gd(learningRate, gradient, intercept);
     float xCoord;
     float yCoord;
     std::ifstream xin("x.bin", std::ios::binary);

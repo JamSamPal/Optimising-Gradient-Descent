@@ -1,5 +1,5 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 def dump_to_file(coordinates, filename):
     coordinates.astype(np.float32).tofile(f"{filename}.bin")
@@ -27,7 +27,9 @@ def main():
     We will test to see how accurate we can get in a real-time gd
     """
 
-    x_coords, y_coords = generate_lines(100, 1000)
+    x_coords, y_coords = generate_lines(1, 1000)
+    plt.scatter(x_coords, y_coords)
+    plt.savefig('training_data.png')
 
     dump_to_file(x_coords, "x")
     dump_to_file(y_coords, "y")
